@@ -1,16 +1,9 @@
 <?php
+session_start();
 include('db.php');
-  //echo 'Host information: '.$mysqli->host_info;
-  //echo '<br>';
-  //echo 'Protocol version: '.$mysqli->protocol_version;
+
   $sql = "SELECT * FROM `images`";
-  $result = mysqli_query($mysqli, $sql);
-  $details = mysqli_fetch_all($result, MYSQLI_ASSOC);
-  //mysqli_free_result($result);
-  //mysqli_close($mysqli);
-  print_r($details);
-//$conn=mysqli_connect('localhost','root','');
-//mysqli_select_db($conn,'tuteeHUT');
+  $result =$con->query($sql);
 
 ?>
 <!DOCTYPE html>
@@ -26,10 +19,32 @@ include('db.php');
     <title>Photo display</title>
   </head>
   <body>
+
+
     <h2 style="color: white">Images: </h2>
+    <div class="header text-center">
+      <?php
+      if(isset($_SESSION['username'])){
+          echo "<div class='bg-white text-center'>HELLO ". $_SESSION['username']."</div>";
+          ?>
+          <a type="button" class="btn btn-success submit" href="logout.php" >Logout</a>
+          <?php
+      }else{
+          ?>
+          <a type="button" class="btn btn-success submit" href="login.php" >Login</a>
+          <?php
+      }
+      ?>
+
+      <a type="button" class="btn btn-primary submit" href="photo_upload.php">Add a picture</a>
+        <a type="button" class="btn btn-danger submit" href="credit_card.html">Credit card GUI</a>
+  </div>
     <div class="container">
-    <?php foreach($details as $detail){ ?>
-		<img src="ulpoads/<?php echo detail['image']; ?>">
+    <?php
+    while( $details = $result->fetch_assoc()){
+        ?>
+		<img src="uploads/<?php echo $details['name']; ?>">
+        <?php
     }?>
 	  </div>
 

@@ -1,0 +1,33 @@
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  .button1 {
+    background-color:gray; /* Green */
+    border: none;
+    border-radius: 10px;
+    color: white;
+    color : black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+.Split{
+    border:solid;
+    border-bottom: 1px solid black;
+    width:50px;
+}
+.alert {
+    padding: 20px;
+    background-color: rgb(124, 185, 235);
+    color:darkblue;
+  }

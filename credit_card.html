@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="sam.css">
+    <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<center>
+<div class="container">
+    <a type="button" class="btn btn-primary submit" href="index.php">HOME</a>
+    
+<div class="col-md-6 mx-auto card p-4">
+    <h2 align='center'>Credit Card Payment</h2>
+    <div class="card" >
+        <div class="alert">
+            CVC code is required.
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+          </div>
+
+      <div class="card-body form-group">Card Holder's Name<br>
+            <input type="text" class="form-control">
+      </div>
+
+      <div class="card-body form-group">Card Number<br>
+        <input type="text" class="form-control">
+      </div>
+
+      <div class="card-body form-group">Card Exp. Date<br>
+        <select name="month" id="month">
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>&nbsp;
+          <select name="year" id="year">
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+            <option value="2030">2030</option>
+          </select>&nbsp;
+          <input type="text" id="cvc" placeholder="cvc">
+      </div>
+
+      <div class="card-body form-group">Amount<br>
+        <div class="input-group-prepend">
+            <span class="input-group-text">$</span>
+          <input type="text" class="form-control">
+          <div class="input-group-append">
+            <span class="input-group-text">.00</span>
+        </div>
+        </div>
+        <br><br>
+      <div>
+        <a href="index.php" class="button1">Cancel</a>
+        <a href="index.php" class="button">Submit</a>
+      </div>
+      <br>
+    </div>
+</div>
+</div>
+</center>
+</body>
+</html>

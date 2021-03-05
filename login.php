@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(isset($_SESSION['username'])){
+    header("location: index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +19,7 @@
 
 <div class="jumbotron text-center">
     <h1>Login into the Site</h1>
+    <a type="button" class="btn btn-warning submit" href="index.php" >Home</a>
 </div>
 
 <div class="container">
@@ -33,6 +40,7 @@
 
                 <button type="button" class="btn btn-primary submit" name="login" onclick="verifyLogin()">Login</button>
                 <a type="button" class="btn btn-success submit" href="signup.php" >Sign Up</a>
+                <a type="button" class="btn btn-danger submit" href="forgot.php">Forgot Password</a>
             </form>
         </div>
     </div>
