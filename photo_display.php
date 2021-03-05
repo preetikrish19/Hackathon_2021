@@ -10,13 +10,13 @@ include "db.php";
             //echo $msg = "Image uploaded successfully";
             echo "<script>";
             echo "alert('Details sent to database successfully!!');";
-            //echo "window.location.href = 'index.php';";
+            echo "window.location.href = 'index.php';";
             echo "</script>";
         }
   else{
             echo "<script>";
             echo "alert('Image not uploaded');";
-            //echo "window.location.href = 'index.php';";
+            echo "window.location.href = 'index.php';";
             echo "</script>";
             //echo $msg = "Failed to upload image";
       }
