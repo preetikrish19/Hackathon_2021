@@ -10,7 +10,7 @@
   <body>
     <form action="photo_display.php" method="post" enctype="multipart/form-data">
       Select image to upload:
-      <input type="file" name="image" id="image">
+      <input type="file" name="image" id="image" accept="image/*">
       <input type="submit" value="submit" name="submit">
     </form>
   </body>
