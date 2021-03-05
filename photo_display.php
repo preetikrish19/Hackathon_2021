@@ -1,32 +1,12 @@
 <?php
-$db_host = 'localhost';
-$db_user = 'root';
-$db_password = '';
-$db_db = 'hackathon';
-
-$mysqli = mysqli_connect(
-  $db_host,
-  $db_user,
-  $db_password,
-  $db_db
-);
-if ($mysqli->connect_error) {
-    echo 'Errno: '.$mysqli->connect_errno;
-    echo '<br>';
-    echo 'Error: '.$mysqli->connect_error;
-    exit();
-  }
-  else{
-    echo "connected successfully";
-  }
-  $conn = mysqli_connect("localhost", "root", "", "hackathon");
+include "db.php";
   if (isset($_POST['submit'])) {
 
       $filename = $_FILES["image"]["name"];
       $tempname = $_FILES["image"]["tmp_name"];
       $folder = "uploads/".$filename;
       $sql = "INSERT INTO `images`(`name`) VALUES ( '$filename' )";
-      if (move_uploaded_file($filename, $folder))  {
+      if (move_uploaded_file($tempname, $folder))  {
             //echo $msg = "Image uploaded successfully";
             echo "<script>";
             echo "alert('Details sent to database successfully!!');";
@@ -41,7 +21,7 @@ if ($mysqli->connect_error) {
             //echo $msg = "Failed to upload image";
       }
     }
-  if($mysqli->query($sql))
+  if($con->query($sql))
   {
     //Success
     echo "inserted successfully";
